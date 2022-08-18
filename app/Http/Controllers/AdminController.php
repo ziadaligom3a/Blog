@@ -59,7 +59,8 @@ class AdminController extends Controller
         ]);
         $validate['user_id'] = auth()->id();
         $validate['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
-        // dd($validate);
+
+        dd($validate);
         Post::create($validate);
         return redirect('/posts/' . $validate['slug']);
       }catch(\Exception $e){
