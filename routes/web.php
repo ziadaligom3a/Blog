@@ -48,6 +48,7 @@ Route::middleware('guest')->group(function(){
     Route::get('login',[LoginController::class,'index']);
     Route::post('login',[LoginController::class,'login']);
 });
+Route::get('/make',[Post::class,'make']);
 
 Route::middleware('auth')->group(function(){
     Route::post('/posts/{post:slug}/comment',[CommentController::class,'AddComment']);
