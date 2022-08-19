@@ -7,7 +7,7 @@ use MailchimpMarketing\ApiClient;
 class MailchimpNewsletter implements Newsletter{
 
 
-
+    
     public function __construct(protected ApiClient $client)
     {
         //

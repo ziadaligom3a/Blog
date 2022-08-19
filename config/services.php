@@ -35,5 +35,11 @@ return [
 
         'key' => env('MAILCHIMP_KEY'),
         'list'=> env('MAILCHIMP_LIST')
+    ],
+
+    'IMG' => [
+
+        'key' => env('IMG_KEY')
     ]
+
 ];

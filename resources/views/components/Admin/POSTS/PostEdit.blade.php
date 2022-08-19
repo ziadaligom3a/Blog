@@ -58,7 +58,7 @@
                 
                </div>
                <div class="flex mt-6">
-               <img   src="/{{ $post->thumbnail }}" class="rounded-xl" width="100" alt="">
+               <img src="{{ $post->thumbnail }}" class="rounded-xl" width="100" alt="">
            </div>
         </div>
        </div>

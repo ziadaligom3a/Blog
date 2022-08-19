@@ -47,7 +47,7 @@
       </div>
         <div class="product-cell image">
           <div class="col-span-4 lg:text-center lg:pt-14 mb-10">
-            <img src="/{{ $ps->thumbnail }}" alt="" class="rounded-xl">
+            <img src="{{ $ps->thumbnail }}" alt="" class="rounded-xl">
 
         </div>
           <span>

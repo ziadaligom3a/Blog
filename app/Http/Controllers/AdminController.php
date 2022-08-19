@@ -9,7 +9,7 @@ use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
-
+use App\Http\Controllers\ImgApiController;
 class AdminController extends Controller
 {
    public function index(){
@@ -58,7 +58,8 @@ class AdminController extends Controller
 
         ]);
         $validate['user_id'] = auth()->id();
-        $validate['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        $img = ImgApiController::api(base64_encode($validate['thumbnail'] = request()->file('thumbnail')->get()));
+        $validate['thumbnail'] = $img->image->url;
 
         // dd($validate);
         Post::create($validate);
@@ -125,8 +126,8 @@ class AdminController extends Controller
       ]);
       $validate['user_id'] = auth()->id();
       if(isset($validate['thumbnail'])):
-      $validate['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
-      
+        $img = ImgApiController::api(base64_encode($validate['thumbnail'] = request()->file('thumbnail')->get()));
+        $validate['thumbnail'] = $img->image->url;      
       endif;
       $post->update($validate);
       return redirect('/posts/' . $validate['slug']);
