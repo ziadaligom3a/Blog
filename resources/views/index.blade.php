@@ -3,8 +3,8 @@
 <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
    
     @if($posts->count())
-   
-    <x-posts.posts-featured-card :post="$posts[0]"/>
+    @dd($posts)  
+    <x-posts.posts-featured-card :post="$posts"/>
 
   
     <div class="lg:grid lg:grid-cols-2">
