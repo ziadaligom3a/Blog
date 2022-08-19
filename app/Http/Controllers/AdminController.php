@@ -59,7 +59,7 @@ class AdminController extends Controller
         $img = ImgApiController::api(base64_encode($validate['thumbnail'] = request()->file('thumbnail')->get()));
         $validate['thumbnail'] = $img->image->url;
 
-        dd($validate);
+        // dd($validate);
         Post::create($validate);
         return redirect('/posts/' . $validate['slug']);
       }catch(\Exception $e){
