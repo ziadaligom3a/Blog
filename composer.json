@@ -5,6 +5,7 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
+        "fakerphp/faker": "^1.9.1",
         "php": "^8.0.2",
         "doctrine/dbal": "^3.3",
         "guzzlehttp/guzzle": "^7.2",
@@ -15,7 +16,6 @@
         "mailchimp/marketing": "^3.0"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
