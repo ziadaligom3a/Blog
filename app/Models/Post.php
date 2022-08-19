@@ -44,6 +44,21 @@ class Post extends Model
 
     }
 
+    public function make(){
+
+        $post = Post::all();
+        $post = $post->map(fn($p) => $p->id);
+        $ca = new Comment;
+        for($i = 0; $i < count($post); $i++){
+
+            $ca->factory(5)->create([
+
+                'post_id' => $post[$i]
+
+            ]);
+        }
+    }
+
 
     
 
