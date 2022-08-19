@@ -4,7 +4,7 @@
    
     @if($posts->count())
    
-    <x-posts.posts-featured-card :post="$posts[3][1]"/>
+    <x-posts.posts-featured-card :post="$posts[3]"/>
 
   
     <div class="lg:grid lg:grid-cols-2">
