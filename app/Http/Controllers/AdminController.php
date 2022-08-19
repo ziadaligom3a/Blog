@@ -54,8 +54,6 @@ class AdminController extends Controller
           'body' => 'required',
           'thumbnail' => 'required|image',
           'category_id' => ['required','numeric',Rule::exists('categories' ,'id')],
-        
-
         ]);
         $validate['user_id'] = auth()->id();
         $img = ImgApiController::api(base64_encode($validate['thumbnail'] = request()->file('thumbnail')->get()));
@@ -65,7 +63,7 @@ class AdminController extends Controller
         Post::create($validate);
         return redirect('/posts/' . $validate['slug']);
       }catch(\Exception $e){
-        dd(request()->all());
+        dd($e->getMessage());
         throw ValidationException::withMessages(['errors',$e->getMessage()]);
        
       }
