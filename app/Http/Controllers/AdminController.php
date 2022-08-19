@@ -65,7 +65,7 @@ class AdminController extends Controller
         Post::create($validate);
         return redirect('/posts/' . $validate['slug']);
       }catch(\Exception $e){
-       
+        dd(request()->all());
         throw ValidationException::withMessages(['errors',$e->getMessage()]);
        
       }
